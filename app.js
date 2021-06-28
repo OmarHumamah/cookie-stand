@@ -1,9 +1,116 @@
 'use strict'
-let hours = ['6am', '7am', '8am', '9am','10am', '11am','12pm', '1pm','2pm', '3pm','4pm', '5pm','6pm', '7am']
+let hours = ['6am', '7am', '8am', '9am', '10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7am']
 
 function randomCust(min, max) {
     return Math.floor(Math.random() * (max - min + 1) + min);
 }
+function Locations(name, minCust, maxCust, avgCS,) {
+    this.name = name,
+        this.minCust = minCust,
+        this.maxCust = maxCust,
+        this.avgCS = avgCS
+}
+let seattle = new Locations('Seattle', 23, 65, 6.3);
+let tokyo = new Locations('Tokyo', 3, 24, 1.2);
+let dubai = new Locations('dubai', 11, 38, 3.7);
+let paris = new Locations('paris', 20, 38, 2.3);
+let lima = new Locations('lima', 2, 16, 4.6);
+
+console.log(seattle.name);
+
+Locations.prototype.getRandomCustomers = function () {
+    this.randomCustomers = [];
+    this.cookiesPh = [];
+    this.total = 0;
+    for (let i = 0; i < hours.length; i++) {
+        this.randomCustomers.push(randomCust(this.minCust, this.maxCust));
+        this.cookiesPh.push(Math.floor(this.randomCustomers[i] * this.avgCS));
+        this.total = this.total + this.cookiesPh[i]
+    }
+}
+
+seattle.getRandomCustomers();
+tokyo.getRandomCustomers();
+dubai.getRandomCustomers();
+paris.getRandomCustomers();
+lima.getRandomCustomers();
+let parent = document.getElementById('list')
+let tableAll = document.createElement('table')
+parent.appendChild(tableAll)
+//......................[HEADER ROW & FOOTER ROW]...............................
+function headerRow() {
+    let row00 = document.createElement('tr')
+    tableAll.appendChild(row00)
+    let emtHR = document.createElement('th')
+    row00.appendChild(emtHR)
+    emtHR.textContent = 'Location'
+    for (let i = 0; i < hours.length; i++) {
+        let tHeader = document.createElement('th')
+        row00.appendChild(tHeader)
+        tHeader.textContent = hours[i]
+    }
+
+    let total = document.createElement('th')
+    row00.appendChild(total)
+    total.textContent = "Daily Location Total"
+}
+function footerRow() {
+    let footerRow = document.createElement('tr')
+    tableAll.appendChild(footerRow)
+    let fTotal = document.createElement('th')
+    footerRow.appendChild(fTotal)
+    fTotal.textContent = 'Total'
+    for (let i = 0; i < hours.length; i++) {
+        let emt = document.createElement('th')
+        footerRow.appendChild(emt)
+        emt.textContent = seattle.cookiesPh[i]+tokyo.cookiesPh[i]+dubai.cookiesPh[i]+paris.cookiesPh[i]+lima.cookiesPh[i]
+    }
+    let total1 = document.createElement('th')
+    footerRow.appendChild(total1)
+    total1.textContent = seattle.total+dubai.total+tokyo.total+paris.total+lima.total
+}
+//..................................................
+headerRow();
+Locations.prototype.displayResults = function () {
+
+
+    let row01 = document.createElement('tr')
+    tableAll.appendChild(row01)
+    let locationRow = document.createElement('td')
+    row01.appendChild(locationRow)
+    locationRow.textContent = this.name
+
+    for (let i = 0; i < hours.length; i++) {
+        let cookiesPhRow = document.createElement('td')
+        row01.appendChild(cookiesPhRow)
+        cookiesPhRow.textContent = this.cookiesPh[i]
+    }
+
+    let totalR = document.createElement('td')
+    row01.appendChild(totalR)
+    totalR.textContent = this.total
+
+
+
+}
+
+
+seattle.displayResults();
+tokyo.displayResults();
+dubai.displayResults();
+paris.displayResults();
+lima.displayResults();
+
+footerRow();
+
+/*
+console.log(seattle.randomCustomers);
+console.log(seattle.cookiesPh);
+console.log(seattle.total);
+console.log(tokyo.cookiesPh);*/
+
+
+/*
 let seattle ={
     name: 'Seattle',
     minCust: 23,
@@ -12,19 +119,19 @@ let seattle ={
     randomCustomers: [],
     cookiesPh: [],
     total: 0,
-    
-    
+
+
     getCust : function(){
         for (let i = 0; i < hours.length; i++) {
-            this.randomCustomers.push(randomCust(this.minCust, this.maxCust)) 
+            this.randomCustomers.push(randomCust(this.minCust, this.maxCust))
         }
-    }, 
-    
+    },
+
     getCookiesPh: function() {
         for (let i = 0; i < hours.length; i++) {
             this.cookiesPh.push(Math.floor(this.randomCustomers[i]*this.avgCS))
         }
-        
+
     },
 
     displayresult: function(){
@@ -46,11 +153,11 @@ for (let i = 0; i < hours.length; i++) {
 // this.total = this.cookiesPh[0]+this.cookiesPh[1]+this.cookiesPh[2]+this.cookiesPh[3]+this.cookiesPh[4]+this.cookiesPh[5]+this.cookiesPh[6]+this.cookiesPh[7]+this.cookiesPh[8]+this.cookiesPh[9]+this.cookiesPh[10]+this.cookiesPh[11]+this.cookiesPh[12]+this.cookiesPh[13]
 let t = document.createElement('li');
 unOrdered.appendChild(t)
-t.textContent = `Total: ${this.total}` 
+t.textContent = `Total: ${this.total}`
 
 },
 
-   
+
 }
 seattle.getCust();
 seattle.getCookiesPh();
@@ -65,19 +172,19 @@ let tokyo ={
     randomCustomers: [],
     cookiesPh: [],
     total: 0,
-    
-    
+
+
     getCust : function(){
         for (let i = 0; i < hours.length; i++) {
-            this.randomCustomers.push(randomCust(this.minCust, this.maxCust)) 
+            this.randomCustomers.push(randomCust(this.minCust, this.maxCust))
         }
-    }, 
-    
+    },
+
     getCookiesPh: function() {
         for (let i = 0; i < hours.length; i++) {
             this.cookiesPh.push(Math.floor(this.randomCustomers[i]*this.avgCS))
         }
-        
+
     },
 
     displayresult: function(){
@@ -99,11 +206,11 @@ for (let i = 0; i < hours.length; i++) {
 // this.total = this.cookiesPh[0]+this.cookiesPh[1]+this.cookiesPh[2]+this.cookiesPh[3]+this.cookiesPh[4]+this.cookiesPh[5]+this.cookiesPh[6]+this.cookiesPh[7]+this.cookiesPh[8]+this.cookiesPh[9]+this.cookiesPh[10]+this.cookiesPh[11]+this.cookiesPh[12]+this.cookiesPh[13]
 let t = document.createElement('li');
 unOrdered.appendChild(t)
-t.textContent = `Total: ${this.total}` 
+t.textContent = `Total: ${this.total}`
 
 },
 
-   
+
 }
 tokyo.getCust();
 tokyo.getCookiesPh();
@@ -117,19 +224,19 @@ let dubai ={
     randomCustomers: [],
     cookiesPh: [],
     total: 0,
-    
-    
+
+
     getCust : function(){
         for (let i = 0; i < hours.length; i++) {
-            this.randomCustomers.push(randomCust(this.minCust, this.maxCust)) 
+            this.randomCustomers.push(randomCust(this.minCust, this.maxCust))
         }
-    }, 
-    
+    },
+
     getCookiesPh: function() {
         for (let i = 0; i < hours.length; i++) {
             this.cookiesPh.push(Math.floor(this.randomCustomers[i]*this.avgCS))
         }
-        
+
     },
 
     displayresult: function(){
@@ -151,12 +258,12 @@ for (let i = 0; i < hours.length; i++) {
 // this.total = this.cookiesPh[0]+this.cookiesPh[1]+this.cookiesPh[2]+this.cookiesPh[3]+this.cookiesPh[4]+this.cookiesPh[5]+this.cookiesPh[6]+this.cookiesPh[7]+this.cookiesPh[8]+this.cookiesPh[9]+this.cookiesPh[10]+this.cookiesPh[11]+this.cookiesPh[12]+this.cookiesPh[13]
 let t = document.createElement('li');
 unOrdered.appendChild(t)
-t.textContent = `Total: ${this.total}` 
+t.textContent = `Total: ${this.total}`
 
 },
 
 
-   
+
 }
 
 
@@ -173,19 +280,19 @@ let paris ={
     randomCustomers: [],
     cookiesPh: [],
     total: 0,
-    
-    
+
+
     getCust : function(){
         for (let i = 0; i < hours.length; i++) {
-            this.randomCustomers.push(randomCust(this.minCust, this.maxCust)) 
+            this.randomCustomers.push(randomCust(this.minCust, this.maxCust))
         }
-    }, 
-    
+    },
+
     getCookiesPh: function() {
         for (let i = 0; i < hours.length; i++) {
             this.cookiesPh.push(Math.floor(this.randomCustomers[i]*this.avgCS))
         }
-        
+
     },
 
     displayresult: function(){
@@ -207,12 +314,12 @@ for (let i = 0; i < hours.length; i++) {
 // this.total = this.cookiesPh[0]+this.cookiesPh[1]+this.cookiesPh[2]+this.cookiesPh[3]+this.cookiesPh[4]+this.cookiesPh[5]+this.cookiesPh[6]+this.cookiesPh[7]+this.cookiesPh[8]+this.cookiesPh[9]+this.cookiesPh[10]+this.cookiesPh[11]+this.cookiesPh[12]+this.cookiesPh[13]
 let t = document.createElement('li');
 unOrdered.appendChild(t)
-t.textContent = `Total: ${this.total}` 
+t.textContent = `Total: ${this.total}`
 
 },
 
 
-   
+
 }
 
 
@@ -229,19 +336,19 @@ let lima ={
     randomCustomers: [],
     cookiesPh: [],
     total: 0,
-    
-    
+
+
     getCust : function(){
         for (let i = 0; i < hours.length; i++) {
-            this.randomCustomers.push(randomCust(this.minCust, this.maxCust)) 
+            this.randomCustomers.push(randomCust(this.minCust, this.maxCust))
         }
-    }, 
-    
+    },
+
     getCookiesPh: function() {
         for (let i = 0; i < hours.length; i++) {
             this.cookiesPh.push(Math.floor(this.randomCustomers[i]*this.avgCS))
         }
-        
+
     },
 
     displayresult: function(){
@@ -263,15 +370,16 @@ for (let i = 0; i < hours.length; i++) {
 // this.total = this.cookiesPh[0]+this.cookiesPh[1]+this.cookiesPh[2]+this.cookiesPh[3]+this.cookiesPh[4]+this.cookiesPh[5]+this.cookiesPh[6]+this.cookiesPh[7]+this.cookiesPh[8]+this.cookiesPh[9]+this.cookiesPh[10]+this.cookiesPh[11]+this.cookiesPh[12]+this.cookiesPh[13]
 let t = document.createElement('li');
 unOrdered.appendChild(t)
-t.textContent = `Total: ${this.total}` 
+t.textContent = `Total: ${this.total}`
 
 },
 
 
-   
+
 }
 
 
 lima.getCust();
 lima.getCookiesPh();
 lima.displayresult();
+*/
