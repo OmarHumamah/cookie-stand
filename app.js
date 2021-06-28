@@ -41,8 +41,9 @@ for (let i = 0; i < hours.length; i++) {
    let items = document.createElement('li')
    unOrdered.appendChild(items);
    items.textContent = `${hours[i]}: ${this.cookiesPh[i]}`
+   this.total= this.total+this.cookiesPh[i];
 }
-this.total = this.cookiesPh[0]+this.cookiesPh[1]+this.cookiesPh[2]+this.cookiesPh[3]+this.cookiesPh[4]+this.cookiesPh[5]+this.cookiesPh[6]+this.cookiesPh[7]+this.cookiesPh[8]+this.cookiesPh[9]+this.cookiesPh[10]+this.cookiesPh[11]+this.cookiesPh[12]+this.cookiesPh[13]
+// this.total = this.cookiesPh[0]+this.cookiesPh[1]+this.cookiesPh[2]+this.cookiesPh[3]+this.cookiesPh[4]+this.cookiesPh[5]+this.cookiesPh[6]+this.cookiesPh[7]+this.cookiesPh[8]+this.cookiesPh[9]+this.cookiesPh[10]+this.cookiesPh[11]+this.cookiesPh[12]+this.cookiesPh[13]
 let t = document.createElement('li');
 unOrdered.appendChild(t)
 t.textContent = `Total: ${this.total}` 
@@ -93,8 +94,9 @@ for (let i = 0; i < hours.length; i++) {
    let items = document.createElement('li')
    unOrdered.appendChild(items);
    items.textContent = `${hours[i]}: ${this.cookiesPh[i]}`
+   this.total= this.total+this.cookiesPh[i];
 }
-this.total = this.cookiesPh[0]+this.cookiesPh[1]+this.cookiesPh[2]+this.cookiesPh[3]+this.cookiesPh[4]+this.cookiesPh[5]+this.cookiesPh[6]+this.cookiesPh[7]+this.cookiesPh[8]+this.cookiesPh[9]+this.cookiesPh[10]+this.cookiesPh[11]+this.cookiesPh[12]+this.cookiesPh[13]
+// this.total = this.cookiesPh[0]+this.cookiesPh[1]+this.cookiesPh[2]+this.cookiesPh[3]+this.cookiesPh[4]+this.cookiesPh[5]+this.cookiesPh[6]+this.cookiesPh[7]+this.cookiesPh[8]+this.cookiesPh[9]+this.cookiesPh[10]+this.cookiesPh[11]+this.cookiesPh[12]+this.cookiesPh[13]
 let t = document.createElement('li');
 unOrdered.appendChild(t)
 t.textContent = `Total: ${this.total}` 
@@ -144,8 +146,9 @@ for (let i = 0; i < hours.length; i++) {
    let items = document.createElement('li')
    unOrdered.appendChild(items);
    items.textContent = `${hours[i]}: ${this.cookiesPh[i]}`
+   this.total= this.total+this.cookiesPh[i];
 }
-this.total = this.cookiesPh[0]+this.cookiesPh[1]+this.cookiesPh[2]+this.cookiesPh[3]+this.cookiesPh[4]+this.cookiesPh[5]+this.cookiesPh[6]+this.cookiesPh[7]+this.cookiesPh[8]+this.cookiesPh[9]+this.cookiesPh[10]+this.cookiesPh[11]+this.cookiesPh[12]+this.cookiesPh[13]
+// this.total = this.cookiesPh[0]+this.cookiesPh[1]+this.cookiesPh[2]+this.cookiesPh[3]+this.cookiesPh[4]+this.cookiesPh[5]+this.cookiesPh[6]+this.cookiesPh[7]+this.cookiesPh[8]+this.cookiesPh[9]+this.cookiesPh[10]+this.cookiesPh[11]+this.cookiesPh[12]+this.cookiesPh[13]
 let t = document.createElement('li');
 unOrdered.appendChild(t)
 t.textContent = `Total: ${this.total}` 
@@ -199,8 +202,9 @@ for (let i = 0; i < hours.length; i++) {
    let items = document.createElement('li')
    unOrdered.appendChild(items);
    items.textContent = `${hours[i]}: ${this.cookiesPh[i]}`
+   this.total= this.total+this.cookiesPh[i];
 }
-this.total = this.cookiesPh[0]+this.cookiesPh[1]+this.cookiesPh[2]+this.cookiesPh[3]+this.cookiesPh[4]+this.cookiesPh[5]+this.cookiesPh[6]+this.cookiesPh[7]+this.cookiesPh[8]+this.cookiesPh[9]+this.cookiesPh[10]+this.cookiesPh[11]+this.cookiesPh[12]+this.cookiesPh[13]
+// this.total = this.cookiesPh[0]+this.cookiesPh[1]+this.cookiesPh[2]+this.cookiesPh[3]+this.cookiesPh[4]+this.cookiesPh[5]+this.cookiesPh[6]+this.cookiesPh[7]+this.cookiesPh[8]+this.cookiesPh[9]+this.cookiesPh[10]+this.cookiesPh[11]+this.cookiesPh[12]+this.cookiesPh[13]
 let t = document.createElement('li');
 unOrdered.appendChild(t)
 t.textContent = `Total: ${this.total}` 
@@ -254,8 +258,9 @@ for (let i = 0; i < hours.length; i++) {
    let items = document.createElement('li')
    unOrdered.appendChild(items);
    items.textContent = `${hours[i]}: ${this.cookiesPh[i]}`
+   this.total= this.total+this.cookiesPh[i];
 }
-this.total = this.cookiesPh[0]+this.cookiesPh[1]+this.cookiesPh[2]+this.cookiesPh[3]+this.cookiesPh[4]+this.cookiesPh[5]+this.cookiesPh[6]+this.cookiesPh[7]+this.cookiesPh[8]+this.cookiesPh[9]+this.cookiesPh[10]+this.cookiesPh[11]+this.cookiesPh[12]+this.cookiesPh[13]
+// this.total = this.cookiesPh[0]+this.cookiesPh[1]+this.cookiesPh[2]+this.cookiesPh[3]+this.cookiesPh[4]+this.cookiesPh[5]+this.cookiesPh[6]+this.cookiesPh[7]+this.cookiesPh[8]+this.cookiesPh[9]+this.cookiesPh[10]+this.cookiesPh[11]+this.cookiesPh[12]+this.cookiesPh[13]
 let t = document.createElement('li');
 unOrdered.appendChild(t)
 t.textContent = `Total: ${this.total}` 
