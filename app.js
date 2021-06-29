@@ -1,6 +1,6 @@
 'use strict'
-let hours = ['6am', '7am', '8am', '9am', '10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7am']
-
+let hours = ['6am', '7am', '8am', '9am', '10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm']
+let shopLocations = []
 function randomCust(min, max) {
     return Math.floor(Math.random() * (max - min + 1) + min);
 }
@@ -9,6 +9,8 @@ function Locations(name, minCust, maxCust, avgCS,) {
         this.minCust = minCust,
         this.maxCust = maxCust,
         this.avgCS = avgCS
+
+        this.shopLocations= shopLocations.push(this)
 }
 let seattle = new Locations('Seattle', 23, 65, 6.3);
 let tokyo = new Locations('Tokyo', 3, 24, 1.2);
@@ -16,7 +18,7 @@ let dubai = new Locations('dubai', 11, 38, 3.7);
 let paris = new Locations('paris', 20, 38, 2.3);
 let lima = new Locations('lima', 2, 16, 4.6);
 
-console.log(seattle.name);
+
 
 Locations.prototype.getRandomCustomers = function () {
     this.randomCustomers = [];
@@ -68,7 +70,7 @@ function footerRow() {
     let total1 = document.createElement('th')
     footerRow.appendChild(total1)
     total1.textContent = seattle.total+dubai.total+tokyo.total+paris.total+lima.total
-}
+}                                         
 //..................................................
 headerRow();
 Locations.prototype.displayResults = function () {
@@ -102,7 +104,8 @@ paris.displayResults();
 lima.displayResults();
 
 footerRow();
-
+console.log(shopLocations);
+console.log(shopLocations[0].name);
 /*
 console.log(seattle.randomCustomers);
 console.log(seattle.cookiesPh);
