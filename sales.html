@@ -9,10 +9,11 @@
     <style>
         td {
             border: 1px solid black;
-            
+
             padding: 5px;
         }
-        th{
+
+        th {
             border-bottom: 1px solid black;
             padding: 5px;
         }
@@ -35,19 +36,26 @@
 
     </header>
     <form id="addLocation">
-        <ul>
-            <li><label for="name">Location:</label>
-                <input type="text" id="name" ></li>
-            <li><label for="min">minimum Customers:</label>
-                <input type="number" id="min"></li>
-            <li><label for="max">maximum Customers:</label>
-                <input type="number" id="max"></li>
-            <li><label for="avg">Average:</label>
-                <input type="number" step="any" id="avg"></li>
+        <fieldset>
+            <legend>Add New Location</legend>
+            <ul>
+                <li><label for="name">Location:</label>
+                    <input type="text" id="name">
+                </li>
+                <li><label for="min">minimum Customers:</label>
+                    <input type="number" id="min">
+                </li>
+                <li><label for="max">maximum Customers:</label>
+                    <input type="number" id="max">
+                </li>
+                <li><label for="avg">Average:</label>
+                    <input type="number" step="any" id="avg">
+                </li>
                 <li><input type="submit" id="submit"></li>
-                
-        </ul>
-    
+
+            </ul>
+        </fieldset>
+    </form>
     <article id='list'></article>
     <script src="app.js"></script>
     <footer></footer>
