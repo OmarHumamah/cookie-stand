@@ -18,8 +18,6 @@ let dubai = new Locations('dubai', 11, 38, 3.7);
 let paris = new Locations('paris', 20, 38, 2.3);
 let lima = new Locations('lima', 2, 16, 4.6);
 
-
-
 Locations.prototype.getRandomCustomers = function () {
     this.randomCustomers = [];
     this.cookiesPh = [];
@@ -30,12 +28,15 @@ Locations.prototype.getRandomCustomers = function () {
         this.total = this.total + this.cookiesPh[i]
     }
 }
-
-seattle.getRandomCustomers();
-tokyo.getRandomCustomers();
-dubai.getRandomCustomers();
-paris.getRandomCustomers();
-lima.getRandomCustomers();
+for (let i = 0; i < shopLocations.length; i++) {
+    
+    shopLocations[i].getRandomCustomers();
+}
+// seattle.getRandomCustomers();
+// tokyo.getRandomCustomers();
+// dubai.getRandomCustomers();
+// paris.getRandomCustomers();
+// lima.getRandomCustomers();
 let parent = document.getElementById('list')
 let tableAll = document.createElement('table')
 parent.appendChild(tableAll)
@@ -62,14 +63,29 @@ function footerRow() {
     let fTotal = document.createElement('th')
     footerRow.appendChild(fTotal)
     fTotal.textContent = 'Total'
+    
     for (let i = 0; i < hours.length; i++) {
-        let emt = document.createElement('th')
-        footerRow.appendChild(emt)
-        emt.textContent = seattle.cookiesPh[i]+tokyo.cookiesPh[i]+dubai.cookiesPh[i]+paris.cookiesPh[i]+lima.cookiesPh[i]
+        let emt = document.createElement('th');
+        footerRow.appendChild(emt);
+        let sum = 0;
+        for (let j = 0; j < shopLocations.length; j++) {
+            
+            sum += shopLocations[j].cookiesPh[i];
+            emt.textContent = sum
+        }
+
+        // emt.textContent = +tokyo.cookiesPh[i]+dubai.cookiesPh[i]+paris.cookiesPh[i]+lima.cookiesPh[i]
     }
     let total1 = document.createElement('th')
     footerRow.appendChild(total1)
-    total1.textContent = seattle.total+dubai.total+tokyo.total+paris.total+lima.total
+    let sum1 = 0;
+    for (let i = 0; i < shopLocations.length; i++) {
+        sum1+= shopLocations[i].total
+        total1.textContent = sum1 
+        console.log(typeof shopLocations[i].total);
+        
+    }
+    
 }                                         
 //..................................................
 headerRow();
@@ -96,12 +112,15 @@ Locations.prototype.displayResults = function () {
 
 }
 
-
-seattle.displayResults();
-tokyo.displayResults();
-dubai.displayResults();
-paris.displayResults();
-lima.displayResults();
+for (let i = 0; i < shopLocations.length; i++) {
+    
+    shopLocations[i].displayResults();
+}
+// seattle.displayResults();
+// tokyo.displayResults();
+// dubai.displayResults();
+// paris.displayResults();
+// lima.displayResults();
 
 footerRow();
 console.log(shopLocations);
