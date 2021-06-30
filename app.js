@@ -10,13 +10,40 @@ function Locations(name, minCust, maxCust, avgCS,) {
         this.maxCust = maxCust,
         this.avgCS = avgCS
 
-        this.shopLocations= shopLocations.push(this)
+        shopLocations.push(this)
 }
 let seattle = new Locations('Seattle', 23, 65, 6.3);
 let tokyo = new Locations('Tokyo', 3, 24, 1.2);
 let dubai = new Locations('dubai', 11, 38, 3.7);
 let paris = new Locations('paris', 20, 38, 2.3);
 let lima = new Locations('lima', 2, 16, 4.6);
+
+let newLocation = document.getElementById('addLocation');
+newLocation.addEventListener('submit', reactionToS);
+
+function reactionToS(event){
+event.preventDefault();
+
+let newName = event.target.name.value; 
+
+let minC = parseInt(event.target.min.value);
+
+let maxC =parseInt( event.target.max.value);
+
+let avgCS02 = parseInt(event.target.avg.value);
+
+
+let newL = new Locations(newName, minC, maxC, avgCS02);
+tableAll.textContent= '';
+headerRow();
+for (let i = 0; i < shopLocations.length; i++) {
+    shopLocations[i].getRandomCustomers();
+    shopLocations[i].displayResults();
+}
+footerRow();
+}
+
+
 
 Locations.prototype.getRandomCustomers = function () {
     this.randomCustomers = [];
@@ -82,7 +109,7 @@ function footerRow() {
     for (let i = 0; i < shopLocations.length; i++) {
         sum1+= shopLocations[i].total
         total1.textContent = sum1 
-        console.log(typeof shopLocations[i].total);
+        
         
     }
     
@@ -123,8 +150,8 @@ for (let i = 0; i < shopLocations.length; i++) {
 // lima.displayResults();
 
 footerRow();
-console.log(shopLocations);
-console.log(shopLocations[0].name);
+
+
 /*
 console.log(seattle.randomCustomers);
 console.log(seattle.cookiesPh);
