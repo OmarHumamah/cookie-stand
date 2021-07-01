@@ -1,84 +1,174 @@
-*{
+@import url('https://fonts.googleapis.com/css2?family=Yellowtail&display=swap');
+* {
     box-sizing: border-box;
     font-family: 'Roboto', sans-serif;
+    list-style: none;
 }
-body{
+
+body {
     background-color: #EFE2B2;
 }
-header{
+
+header {
     background-color: #84563C;
-    height: 150px;
+    height: 190px;
+    box-shadow: black 5px 5px 15px;
+    width: 102%;
+    margin: -8px;
 }
+
+nav a:hover {
+    text-shadow: white 0 0 5px, rgb(255, 212, 183) 0 0 15px;
+}
+
 #logo {
     width: 200px;
     height: 70px;
 }
-h1{
-    margin: 0 15px ;
-    font-family: 'Roboto', sans-serif;
-    font-size:x-large;
-    font-weight: bolder;
-    width: 200px;
+
+h1 {
+    margin: 0 15px;
+    font-family: 'Yellowtail', cursive;
+    font-size: 37px;
+    font-weight: 1000;
+    width: 209px;
+    color: black);
+    text-shadow: ivory 1px 1px 10px;
 }
-#_Clogo{
+
+#_Clogo {
     margin: 25px;
     float: left;
 }
-nav{
-    margin:  65px  0;
+
+nav {
+    margin: 65px 0;
     float: right;
-    
-    
 }
-nav a{
+
+nav a {
     font-family: 'Roboto', sans-serif;
     font-weight: bold;
     font-size: 20px;
     text-decoration: none;
     padding: 30px;
     color: black;
-}
-h3{
-    text-align: center;
-    font-size: 25px;
-    font-weight: bold;
-    margin: 25px 0;
-}
-h5{
-    text-align: center;
+    position: relative;
+    left: -49px;
+    bottom: -26px;
 }
 
-main{
-    font-size:  25px;
+h3 {
+    font-family: 'Yellowtail', cursive;
+    color: rgb(99, 35, 5);
+    text-align: center;
+    font-size: 37px;
+    font-weight: 900;
+    margin: 80px 0 0 0;
+    text-shadow: black 0 0 2px, 0 0 15px;
+}
+
+h5 {
+    color: brown;
+    text-align: center;
+    text-align: center;
+    position: relative;
+    bottom: -6px;
+}
+
+main {
+    font-size: 25px;
     clear: both;
 }
-img{
+
+img {
     max-width: 250px;
     display: inline-block;
     vertical-align: middle;
     margin: 5px;
-    
 }
-section{
-  
-    margin:0 90px;
+
+section {
+    margin: 53px 90px;
     overflow-x: scroll;
     white-space: nowrap;
 }
-h4{
+
+h4 {
     font-size: 25px;
     font-weight: bolder;
 }
-footer{
+
+footer {
     background-color: #5A2C22;
     height: 200px;
     font-family: 'Roboto', sans-serif;
     padding: 40px;
     font-weight: bold;
+    width: 102%;
+    margin: -8px;
 }
-table{
-    margin:100px 200px;
+
+table {
+    margin: 100px 200px;
 }
-footer ul li{
-    line-height:  25px;
+
+footer ul li {
+    line-height: 25px;
+}
+
+form {
+    margin: 40px;
+    border-collapse: collapse;
+    text-align: justify;
+    border-style: solid;
+    border-color: black;
+    background-color: rgba(255, 248, 220, 0.63);
+    text-shadow: 0px 0px 2px;
+    box-shadow: black 0 0 9px;
+    width: 500px;
+    list-style-type: none;
+    position: relative;
+    left: 28%;
+    bottom: -38px;
+    line-height: 25px;
+}
+
+input {
+    position: relative;
+    left: 10%;
+}
+
+#avg, #name {
+    position: relative;
+    left: 32%;
+}
+
+#submit:hover {
+    background-color: rgba(165, 42, 42, 0.589);
+    transition: 400ms;
+}
+
+#submit {
+    position: relative;
+    left: 0%;
+    right: 0%;
+    position: relative;
+    left: 21%;
+    padding: 8px;
+    width: 168px;
+    border-radius: 5px;
+    background-color: brown;
+    color: white;
+    margin: 13px;
+}
+
+table {
+    border-collapse: collapse;
+    text-align: center;
+    border-style: solid;
+    border-color: black;
+    background-color: rgba(255, 248, 220, 0.63);
+    text-shadow: 0px 0px 2px;
+    box-shadow: black 0 0 9px;
 }

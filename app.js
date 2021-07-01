@@ -30,7 +30,7 @@ let minC = parseInt(event.target.min.value);
 
 let maxC =parseInt( event.target.max.value);
 
-let avgCS02 = parseInt(event.target.avg.value);
+let avgCS02 = parseFloat(event.target.avg.value);
 
 
 let newL = new Locations(newName, minC, maxC, avgCS02);
